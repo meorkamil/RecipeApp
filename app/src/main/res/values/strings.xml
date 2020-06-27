@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">RecepiApp</string>
+    <string-array name="type">
+        <item>Appetizer</item>
+        <item>Main Course</item>
+        <item>Dessert</item>
+    </string-array>
+    <string-array name="type_search">
+        <item>All</item>
+        <item>Appetizer</item>
+        <item>Main Course</item>
+        <item>Dessert</item>
+    </string-array>
+</resources>
