@@ -23,7 +23,6 @@ class UpdateRecipe : AppCompatActivity(){
         setContentView(R.layout.update_layout)
 
         val name = intent.getStringExtra(CustomViewHolder.RECIPE_NAME_KEY)
-        val type = intent.getStringExtra(CustomViewHolder.RECIPE_TYPE_KEY)
         val ingredient = intent.getStringExtra(CustomViewHolder.RECIPE_INGREDIENT_KEY)
         val id = intent.getStringExtra(CustomViewHolder.RECIPE_ID_KEY)
         val steps = intent.getStringExtra(CustomViewHolder.RECIPE_STEPS_KEY)
@@ -31,7 +30,6 @@ class UpdateRecipe : AppCompatActivity(){
 
         Picasso.with(this).load(imageUrl).into(image_update_display)
         update_name.setText(name)
-
         update_ingredient.setText(ingredient)
         update_steps.setText(steps)
 
@@ -69,7 +67,6 @@ class UpdateRecipe : AppCompatActivity(){
 
     private fun upload(id: String, name: String, type: String, ingredient: String, steps: String) {
         val c = OkHttpClient()
-        //val r = Request.Builder().url("").build()
         val name = name
         val type = type
         val ingredient =ingredient
@@ -91,15 +88,11 @@ class UpdateRecipe : AppCompatActivity(){
 
         c.newCall(r).enqueue(object: Callback{
             override fun onFailure(call: Call, e: IOException) {
-                Log.e("HI", e.message)
                 e.stackTrace
             }
 
             override fun onResponse(call: Call, response: Response) {
 
-                val s = response.body!!.string()
-                println(s)
-                Log.e("hi", s)
                 val intent = Intent(this@UpdateRecipe, MainActivity::class.java)
                 startActivity(intent)
 

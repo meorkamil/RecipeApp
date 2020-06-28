@@ -25,6 +25,8 @@ class MainAdapter(val homeRecipe: HomeRecipe): RecyclerView.Adapter<CustomViewHo
         val recipe = homeRecipe.recipe.get(position)
         holder?.view?.textView_Name?.text = recipe.name
         holder?.view?.textView_type.text = recipe.type
+        holder?.view?.textView_steps.text = recipe.steps
+        holder?.view?.textView_ingredient.text = recipe.ingredient
 
         val thumbnailImageview = holder?.view?.imageView_Image
         Picasso.with(holder?.view?.context).load(recipe.image).into(thumbnailImageview)

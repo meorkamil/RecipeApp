@@ -75,9 +75,6 @@ class AddRecipe : AppCompatActivity(){
 
             override fun onResponse(call: Call, response: Response) {
 
-                val s = response.body!!.string()
-                println(s)
-                Log.e("hi", s)
                 val intent = Intent(this@AddRecipe, MainActivity::class.java)
                 startActivity(intent)
 
